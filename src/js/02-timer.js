@@ -75,7 +75,7 @@ const minusDay = () => {
   const resultSeconds = convertMs(minus).seconds;
   secondsEl.textContent = addLeadingZero(resultSeconds);
 };
-
+let timer = null;
 startBtn.addEventListener('click', () => {
   startBtn.disabled = true;
   minusDay();
