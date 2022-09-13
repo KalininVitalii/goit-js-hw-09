@@ -62,19 +62,25 @@ let secondsEl = document.querySelector('[data-seconds]');
 const minusDay = () => {
   const minus = selectedDate.getTime() - new Date();
   console.log(convertMs(minus));
+  const time = convertMs(minus);
+  daysEl.textContent = time.days;
+  hoursEl.textContent = time.hours;
+  minuteEl.textContent = time.minutes;
+  secondsEl.textContent = time.seconds;
 
-  const resultDays = convertMs(minus).days;
-  daysEl.textContent = addLeadingZero(resultDays);
+  // const resultDays = convertMs(minus).days;
+  // daysEl.textContent = addLeadingZero(resultDays);
 
-  const resultHours = convertMs(minus).hours;
-  hoursEl.textContent = addLeadingZero(resultHours);
+  // const resultHours = convertMs(minus).hours;
+  // hoursEl.textContent = addLeadingZero(resultHours);
 
-  const resultMinutes = convertMs(minus).minutes;
-  minuteEl.textContent = addLeadingZero(resultMinutes);
+  // const resultMinutes = convertMs(minus).minutes;
+  // minuteEl.textContent = addLeadingZero(resultMinutes);
 
-  const resultSeconds = convertMs(minus).seconds;
-  secondsEl.textContent = addLeadingZero(resultSeconds);
+  // const resultSeconds = convertMs(minus).seconds;
+  // secondsEl.textContent = addLeadingZero(resultSeconds);
 };
+
 let timer = null;
 startBtn.addEventListener('click', () => {
   startBtn.disabled = true;
