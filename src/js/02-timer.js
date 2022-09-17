@@ -46,12 +46,9 @@ const options = {
 };
 
 flatpickr('#datetime-picker', options);
+
 function addLeadingZero(value) {
-  if (value < 10) {
-    return value.toString().padStart(2, '0');
-  } else {
-    return value;
-  }
+  return String(value).padStart(2, '0');
 }
 
 let daysEl = document.querySelector('[data-days]');
